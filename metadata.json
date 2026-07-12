@@ -1,0 +1,6 @@
+{
+  "name": "PMART",
+  "description": "PMART - Premium Dark-Themed E-Commerce Experience. Featuring luxury curation, interactive product pages, secure checkout flows, custom cart drawer, and interactive user & admin dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

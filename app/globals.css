@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #FF1E1E;
+  --color-brand-dark-red: #B30000;
+  --color-dark-bg: #0D0D0D;
+  --color-dark-card: #141414;
+  --color-dark-border: #222222;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+/* Base custom Scrollbars & UI aesthetics */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0D0D0D;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF1E1E;
+  }
+}
+
+/* Glassmorphic Cards & glowing accents */
+.glass-panel {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(26, 26, 26, 0.85);
+  border-color: rgba(255, 30, 30, 0.25);
+  box-shadow: 0 0 30px rgba(255, 30, 30, 0.1);
+  transform: translateY(-2px);
+}
+
+.glass-panel-red {
+  background: rgba(255, 30, 30, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 30, 30, 0.15);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 25px rgba(255, 30, 30, 0.15);
+}
+
+.glow-crimson-strong {
+  box-shadow: 0 0 40px rgba(255, 30, 30, 0.4);
+}
+
+.text-glow-crimson {
+  text-shadow: 0 0 12px rgba(255, 30, 30, 0.5);
+}
+
+/* Premium gradient backgrounds */
+.bg-gradient-red {
+  background: linear-gradient(135deg, #FF1E1E 0%, #B30000 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(180deg, #141414 0%, #080808 100%);
+}
+
+/* Card shimmer shine effect */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 55%
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.shimmer-effect:hover::after {
+  transform: translate(50%, 50%) rotate(45deg);
+}
+
